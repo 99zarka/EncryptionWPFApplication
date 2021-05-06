@@ -41,7 +41,7 @@ namespace Vigenere_Cipher2
         {
             if(SentMessage.Text != "Enter your message consisting of numbers.")
             {
-                SentMessage.Text = encryption_console_prog.Program.CleanText(SentMessage.Text);
+                SentMessage.Text = encryption_console_prog.Program.CleanText(SentMessage.Text);  //removes non-numeric values
                 SentMessage.Select(SentMessage.Text.Length, 0); //Moves the curser to the end of the string
             }
 
@@ -53,8 +53,8 @@ namespace Vigenere_Cipher2
         {
             if (UserKey.Text != "Enter a key of 10 different digits")
             {
-                UserKey.Text = encryption_console_prog.Program.CleanText(UserKey.Text);
-                UserKey.Text = encryption_console_prog.Program.CleanDuplicate(UserKey.Text);
+                UserKey.Text = encryption_console_prog.Program.CleanText(UserKey.Text); //removes non-numeric values
+                UserKey.Text = encryption_console_prog.Program.CleanDuplicate(UserKey.Text); //removes duplicate characters
                 UserKey.Select(UserKey.Text.Length, 0); //Moves the curser to the end of the string
             }
             if (UserKey.Text.Length == 10 && UserKey.Text != "Enter a key of 10 different digits" && SentMessage.Text != "Enter your message consisting of numbers.")
